@@ -78,9 +78,9 @@ def test_PAIR() -> None:
     assert RIGHT_OF(PAIR(TRUE)(FALSE)) is FALSE
 
 
-def test_DISCREMENTED() -> None:
-    assert number_of(DISCREMENTED(_3)) == 2
-    assert number_of(DISCREMENTED(_0)) == 0
+def test_DECREMENTED() -> None:
+    assert number_of(DECREMENTED(_3)) == 2
+    assert number_of(DECREMENTED(_0)) == 0
 
 
 def test_MINUS() -> None:

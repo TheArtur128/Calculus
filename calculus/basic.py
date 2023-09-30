@@ -26,7 +26,7 @@ __all__ = (
     "REC",
     "VOID",
     "RUN",
-    "DISCREMENTED",
+    "DECREMENTED",
     "MINUS",
     "IF",
     "IS_ZERO",
@@ -79,19 +79,19 @@ VOID = REC(lambda void: lambda _: void(void))
 RUN = lambda f: f(VOID)  # for laziness and avoiding `RecursionError`
 
 
-DISCREMENTED = lambda n: lambda f: lambda v: RIGHT_OF(
+DECREMENTED = lambda n: lambda f: lambda v: RIGHT_OF(
     n(lambda p: PAIR(f(LEFT_OF(p)))(LEFT_OF(p)))(
         PAIR(v)(v)
     )
 )
-MINUS = lambda a: lambda b: b(DISCREMENTED)(a)
+MINUS = lambda a: lambda b: b(DECREMENTED)(a)
 
 
 IF = lambda p: lambda a: lambda b: p(a)(b)
 IS_ZERO = lambda n: n(lambda _: FALSE)(TRUE)
 
 LE = lambda a: lambda b: IS_ZERO(MINUS(a)(b))
-LT = lambda a: lambda b: LE(a)(DISCREMENTED(b))
+LT = lambda a: lambda b: LE(a)(DECREMENTED(b))
 
 EQ = lambda a: lambda b: AND(IS_ZERO(MINUS(a)(b)))(IS_ZERO(MINUS(b)(a)))
 
