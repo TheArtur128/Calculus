@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "calculus"
+version = "0.1.0"
+description = "Monorepository for computability theory"
+authors = ["TheArtur128 <88573504+TheArtur128@users.noreply.github.com>"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+act4 = "^3.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
