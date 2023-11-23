@@ -2,7 +2,7 @@ from functools import partial
 from typing import Callable
 from operator import add
 
-from calculus.basic import *
+from calculus.lambda_ import *
 
 
 def number_of(func: Callable[Callable[int, int], Callable[int, int]]) -> int:
